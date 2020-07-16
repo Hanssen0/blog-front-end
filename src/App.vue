@@ -19,7 +19,9 @@
         </ul>
       </div>
     </nav>
+    <div class="d-flex" style="flex-grow: 1;">
     <router-view></router-view>
+    </div>
   </div>
 </template>
 <script>
@@ -32,6 +34,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  @extend .d-flex;
+  @extend .flex-column;
 }
 .nav-link.active .sr-only {
   @extend .d-none;
