@@ -4,7 +4,14 @@ import VueRouter from "vue-router";
 
 Vue.config.productionTip = false;
 
-const routes = [];
+import Article from "@/pages/Article.vue";
+
+const routes = [
+  {
+    path: "/",
+    component: Article,
+  }
+];
 const router = new VueRouter({routes});
 
 Vue.use(VueRouter);
