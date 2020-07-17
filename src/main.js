@@ -10,11 +10,12 @@ import ArticlesList from "@/pages/ArticlesList.vue";
 
 const routes = [
   {
-    path: "/",
-    component: Article,
-  }, {
     path: "/articles",
     component: ArticlesList,
+  }, {
+    path: "/articles/:id",
+    component: Article,
+    props: true,
   }
 ];
 const router = new VueRouter({routes});

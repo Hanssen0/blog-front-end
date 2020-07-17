@@ -29,7 +29,12 @@
 import {GetArticle} from "@/Network.js";
 import {BreakByLine, GetDateTimeFromTimestamp} from "@/Algorithms.js";
 export default {
-  data: function() {
+  props: {
+    id: {
+      type: [Number, String],
+      required: true,
+    }
+  }, data: function() {
     return {
       title: "",
       subtitles: [],
