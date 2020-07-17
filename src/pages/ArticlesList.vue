@@ -16,8 +16,9 @@
           <p v-text="article.contents[0]"></p>
         </section>
         <footer class="row justify-content-end">
-          <router-link to="/articles/0" class="col-12 col-sm-auto order-last
-            order-sm-first position-static text-center stretched-link">
+          <router-link :to="'/articles/' + article.id"
+                       class="col-12 col-sm-auto order-last order-sm-first
+                       position-static text-center stretched-link">
             <span class="material-icons mr-1">link</span>阅读全文
           </router-link>
           <time class="col-auto col-sm text-right text-secondary"
