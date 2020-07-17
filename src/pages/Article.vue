@@ -27,10 +27,7 @@
 </template>
 <script>
 import {GetArticle} from "@/Network.js";
-function BreakByLine(s) {
-  s.replace("\r", "");
-  return s.split("\n");
-}
+import {BreakByLine, GetDateTimeFromTimestamp} from "@/Algorithms.js";
 export default {
   data: function() {
     return {
@@ -50,10 +47,7 @@ export default {
     });
   }, computed: {
     publish_date: function() {
-      let publish_date = new Date(this.publish_timestamp);
-      let timezone_hour = -publish_date.getTimezoneOffset()/60;
-      if (timezone_hour > 0) timezone_hour = "+" + timezone_hour;
-      return publish_date.toLocaleString() + " (UTC " + timezone_hour + ")";
+      return GetDateTimeFromTimestamp(this.publish_timestamp);
     }
   }
 };
