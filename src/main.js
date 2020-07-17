@@ -6,11 +6,15 @@ import "bootstrap";
 Vue.config.productionTip = false;
 
 import Article from "@/pages/Article.vue";
+import ArticlesList from "@/pages/ArticlesList.vue";
 
 const routes = [
   {
     path: "/",
     component: Article,
+  }, {
+    path: "/articles",
+    component: ArticlesList,
   }
 ];
 const router = new VueRouter({routes});
