@@ -2,7 +2,7 @@
   <div class="container shadow">
     <article v-for="(article, index) in articles" :key="index"
              class="row card shadow mx-4 my-4">
-      <header class="card-header text-white bg-secondary">
+      <header class="col-12 card-header text-white bg-secondary">
         <h1 class="card-title text-center" v-text="article.title"></h1>
         <p class="text-center">
           <template v-for="(subtitle, index) in article.subtitles">
@@ -11,19 +11,20 @@
           </template>
         </p>
       </header>
-      <div class="card-body bg-white">
+      <div class="col-12 position-static card-body bg-white">
         <section>
           <p v-text="article.contents[0]"></p>
         </section>
-        <footer class="d-flex justify-content-between">
-          <router-link to="/articles/0" class="stretched-link">
-            阅读全文
+        <footer class="row justify-content-end">
+          <router-link to="/articles/0" class="col-12 col-sm-auto order-last
+            order-sm-first position-static text-center stretched-link">
+            <span class="material-icons mr-1">link</span>阅读全文
           </router-link>
-          <div class="text-secondary d-flex">
-            <time v-text="article.publish_date"></time>
-            <address class="mb-0 ml-2 text-primary" v-text="article.author">
-            </address>
-          </div>
+          <time class="col-auto col-sm text-right text-secondary"
+                v-text="article.publish_date"></time>
+          <address class="col-auto pl-0 mb-0 ml-2 text-right text-primary"
+                   v-text="article.author">
+          </address>
         </footer>
       </div>
     </article>
