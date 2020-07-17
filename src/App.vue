@@ -31,6 +31,7 @@ export default {
 </script>
 <style lang="scss">
 @import "~bootstrap/scss/bootstrap";
+@import "~material-design-icons/iconfont/material-icons.css";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,5 +42,8 @@ export default {
 }
 .nav-link.active .sr-only {
   @extend .d-none;
+}
+.material-icons {
+  @extend .align-bottom;
 }
 </style>
