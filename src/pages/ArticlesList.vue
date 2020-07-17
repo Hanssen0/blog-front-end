@@ -15,8 +15,11 @@
         <section>
           <p v-text="article.contents[0]"></p>
         </section>
-        <footer>
-          <div class="text-secondary d-flex justify-content-end">
+        <footer class="d-flex justify-content-between">
+          <router-link to="/articles/0" class="stretched-link">
+            阅读全文
+          </router-link>
+          <div class="text-secondary d-flex">
             <time v-text="article.publish_date"></time>
             <address class="mb-0 ml-2 text-primary" v-text="article.author">
             </address>

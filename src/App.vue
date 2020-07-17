@@ -17,12 +17,6 @@
               首页<span class="sr-only">当前页面</span>
             </router-link>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/articles/0"
-              exact-active-class="active">
-              文章<span class="sr-only">当前页面</span>
-            </router-link>
-          </li>
         </ul>
       </div>
     </nav>
