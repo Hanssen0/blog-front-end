@@ -11,7 +11,7 @@
           </template>
         </p>
       </header>
-      <div class="card-body">
+      <div class="card-body bg-white">
         <section>
           <p v-text="article.contents[0]"></p>
         </section>
