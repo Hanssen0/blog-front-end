@@ -49,7 +49,7 @@ export default {
       this.contents = BreakByLine(data.content);
       this.author = data.author;
       this.publish_timestamp = data.publish_date;
-    });
+    }, {id: this.id});
   }, computed: {
     publish_date: function() {
       return GetDateTimeFromTimestamp(this.publish_timestamp);
