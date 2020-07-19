@@ -6,8 +6,8 @@ import "bootstrap";
 Vue.config.productionTip = false;
 
 import Main from "@/pages/Main.vue";
-import Article from "@/pages/Article.vue";
-import ArticlesList from "@/pages/ArticlesList.vue";
+import Article from "@/pages/Main/Article.vue";
+import ArticlesList from "@/pages/Main/ArticlesList.vue";
 
 const routes = [
   {
