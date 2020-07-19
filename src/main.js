@@ -5,17 +5,24 @@ import "bootstrap";
 
 Vue.config.productionTip = false;
 
+import Main from "@/pages/Main.vue";
 import Article from "@/pages/Article.vue";
 import ArticlesList from "@/pages/ArticlesList.vue";
 
 const routes = [
   {
-    path: "/articles",
-    component: ArticlesList,
-  }, {
-    path: "/articles/:id",
-    component: Article,
-    props: true,
+    path: "/",
+    component: Main,
+    children: [
+      {
+        path: "articles",
+        component: ArticlesList,
+      }, {
+        path: "articles/:id",
+        component: Article,
+        props: true,
+      }
+    ]
   }
 ];
 const router = new VueRouter({routes});
