@@ -8,6 +8,7 @@ Vue.config.productionTip = false;
 import Main from "@/pages/Main.vue";
 import Article from "@/pages/Main/Article.vue";
 import ArticlesList from "@/pages/Main/ArticlesList.vue";
+import ArticleEdit from "@/pages/Main/ArticleEdit.vue";
 
 const routes = [
   {
@@ -21,6 +22,9 @@ const routes = [
         path: "articles/:id",
         component: Article,
         props: true,
+      }, {
+        path: "/edit",
+        component: ArticleEdit,
       }
     ]
   }
