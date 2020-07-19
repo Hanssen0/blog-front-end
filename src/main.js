@@ -5,12 +5,17 @@ import "bootstrap";
 
 Vue.config.productionTip = false;
 
+import Login from "@/pages/Login.vue";
+
 import Main from "@/pages/Main.vue";
 import Article from "@/pages/Main/Article.vue";
 import ArticlesList from "@/pages/Main/ArticlesList.vue";
 
 const routes = [
   {
+    path: "/login",
+    component: Login,
+  }, {
     path: "/",
     component: Main,
     children: [
