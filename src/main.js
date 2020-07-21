@@ -31,8 +31,9 @@ const routes = [
         component: Article,
         props: true,
       }, {
-        path: "/edit",
+        path: "articles/:id/edit",
         component: ArticleEdit,
+        props: true,
       }
     ]
   }

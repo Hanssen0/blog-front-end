@@ -24,7 +24,12 @@
 <script>
 import {GetArticle, EditArticle} from "@/Network.js";
 export default {
-  data: function() {
+  props: {
+    id: {
+      type: [Number, String],
+      required: true,
+    }
+  }, data: function() {
     return {
       title: "",
       content: "",
@@ -34,13 +39,13 @@ export default {
       article => {
         this.title = article.title;
         this.content = article.content;
-      }, {id: 0}
+      }, {id: this.id}
     );
   }, methods: {
     Submit: function() {
       EditArticle(() => {},
         {
-          id: 0,
+          id: this.id,
           article: {
             title: this.title,
             content: this.content,
