@@ -10,7 +10,12 @@ function GetArticles(callback) {
   AJAX.get("articles")
     .then(response => callback(response.data));
 }
+function Login(callback, args) {
+  AJAX.put("users/login", args.user)
+    .then(response => callback(response.data));
+}
 export {
   GetArticle,
-  GetArticles
+  GetArticles,
+  Login,
 };
