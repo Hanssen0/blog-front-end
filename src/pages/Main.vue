@@ -12,7 +12,7 @@
       <div class="collapse navbar-collapse" id="Navbar">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <router-link class="nav-link" to="/articles"
+            <router-link class="nav-link" to="/main/articles"
                          exact-active-class="active">
               首页<span class="sr-only">当前页面</span>
             </router-link>
