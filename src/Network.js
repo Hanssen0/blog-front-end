@@ -14,8 +14,13 @@ function Login(callback, args) {
   AJAX.put("users/login", args.user)
     .then(response => callback(response.data));
 }
+function IsLogined(callback) {
+  AJAX.get("users/login")
+    .then(response => callback(response.data));
+}
 export {
   GetArticle,
   GetArticles,
   Login,
+  IsLogined,
 };
