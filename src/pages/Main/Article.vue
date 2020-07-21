@@ -17,9 +17,19 @@
         </p>
       </section>
       <footer class="col-12">
-        <div class="text-secondary d-flex justify-content-end">
-          <time v-text="publish_date"></time>
-          <address class="ml-2 text-primary" v-text="author"></address>
+        <div class="row justify-content-end">
+          <div class="col-12 col-sm-auto order-last order-sm-first d-flex
+                      justify-content-center">
+            <router-link :to="'/main/articles/' + id + '/edit'"
+                         class="mb-3 btn btn-primary">
+              <span class="material-icons mr-1">edit</span>编辑文章
+            </router-link>
+          </div>
+          <time class="col-auto col-sm text-right text-secondary"
+                v-text="publish_date"></time>
+          <address class="col-auto pl-0 ml-2 text-right text-primary"
+                   v-text="author">
+          </address>
         </div>
       </footer>
     </article>
