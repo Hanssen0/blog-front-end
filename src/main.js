@@ -37,3 +37,11 @@ new Vue({
   render: h => h(App),
   router,
 }).$mount("#app");
+
+function ReplaceToIndexPage() {
+  router.replace("/");
+}
+
+export {
+  ReplaceToIndexPage,
+};
