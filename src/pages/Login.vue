@@ -28,13 +28,16 @@
   </div>
 </template>
 <script>
-import {Login} from "@/Network.js";
+import {IsLogined, Login} from "@/Network.js";
+import {ReplaceToIndexPage} from "@/main.js";
 export default {
   data: function() {
     return {
       username: "",
       password: "",
     };
+  }, mounted: function() {
+    IsLogined(response => {if (response) ReplaceToIndexPage();});
   }, methods: {
     Login: function() {
       Login(response => console.log(response),
