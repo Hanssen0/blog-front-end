@@ -8,19 +8,44 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" id="UserName">用户名</span>
               </div>
-              <input class="form-control" aria-labelledby="UserName" />
+              <input class="form-control" v-model="username"
+                     aria-labelledby="UserName" />
             </div>
             <div class="input-group mt-2">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="Password">密码</span>
               </div>
-              <input class="form-control" type="password"
+              <input class="form-control" type="password" v-model="password"
                      aria-labelledby="Password" />
             </div>
-            <button class="btn btn-primary px-4 mt-3">登陆</button>
+            <button class="btn btn-primary px-4 mt-3" @click="Login">
+              登陆
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
+<script>
+import {Login} from "@/Network.js";
+export default {
+  data: function() {
+    return {
+      username: "",
+      password: "",
+    };
+  }, methods: {
+    Login: function() {
+      Login(response => console.log(response),
+        {
+          user: {
+            username: this.username,
+            password: this.password,
+          }
+        }
+      );
+    }
+  }
+};
+</script>
