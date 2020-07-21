@@ -14,8 +14,18 @@ function EditArticle(callback, args) {
   AJAX.put("articles/" + args.id, args.article)
     .then(response => callback(response.data));
 }
+function Login(callback, args) {
+  AJAX.put("users/login", args.user)
+    .then(response => callback(response.data));
+}
+function IsLogined(callback) {
+  AJAX.get("users/login")
+    .then(response => callback(response.data));
+}
 export {
   GetArticle,
   GetArticles,
   EditArticle,
+  Login,
+  IsLogined,
 };

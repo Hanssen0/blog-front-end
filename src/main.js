@@ -5,6 +5,8 @@ import "bootstrap";
 
 Vue.config.productionTip = false;
 
+import Login from "@/pages/Login.vue";
+
 import Main from "@/pages/Main.vue";
 import Article from "@/pages/Main/Article.vue";
 import ArticlesList from "@/pages/Main/ArticlesList.vue";
@@ -12,7 +14,13 @@ import ArticleEdit from "@/pages/Main/ArticleEdit.vue";
 
 const routes = [
   {
+    path: "/login",
+    component: Login,
+  }, {
     path: "/",
+    redirect: "/main/articles",
+  }, {
+    path: "/main",
     component: Main,
     children: [
       {
@@ -36,3 +44,11 @@ new Vue({
   render: h => h(App),
   router,
 }).$mount("#app");
+
+function ReplaceToIndexPage() {
+  router.replace("/");
+}
+
+export {
+  ReplaceToIndexPage,
+};
