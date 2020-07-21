@@ -40,7 +40,8 @@ export default {
     IsLogined(response => {if (response) ReplaceToIndexPage();});
   }, methods: {
     Login: function() {
-      Login(response => console.log(response),
+      Login(
+        response => {if (response) ReplaceToIndexPage();},
         {
           user: {
             username: this.username,
