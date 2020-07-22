@@ -45,7 +45,7 @@ export default {
       data.forEach(article => {
         article.subtitles = BreakByLine(article.subtitle);
         article.contents = BreakByLine(article.content);
-        article.publish_date = GetDateTimeFromTimestamp(article.publish_date);
+        article.publish_date = GetDateTimeFromTimestamp(article.publish_time);
         this.articles.push(article);
       });
     });

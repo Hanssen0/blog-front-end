@@ -58,7 +58,7 @@ export default {
       this.subtitles = BreakByLine(data.subtitle);
       this.contents = BreakByLine(data.content);
       this.author = data.author;
-      this.publish_timestamp = data.publish_date;
+      this.publish_timestamp = data.publish_time;
     }, {id: this.id});
   }, computed: {
     publish_date: function() {
