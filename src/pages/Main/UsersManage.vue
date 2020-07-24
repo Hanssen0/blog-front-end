@@ -58,19 +58,19 @@ export default {
       new_password: "",
     };
   }, mounted: function() {
-    this.UpdateUser();
+    this.UpdateUsersList();
   }, methods: {
     AddUser: function() {
-      AddUser(this.UpdateUser, {
+      AddUser(this.UpdateUsersList, {
         user: {
           username: this.new_username,
           password: this.new_password,
         }
       });
-    }, UpdateUser: function() {
+    }, UpdateUsersList: function() {
       GetUsers(users => this.users = users);
     }, DeleteUserById: function(id) {
-      DeleteUserById(this.UpdateUser, {
+      DeleteUserById(this.UpdateUsersList, {
         user_id: id,
       });
     }
