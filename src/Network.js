@@ -26,6 +26,10 @@ function GetUsers(callback) {
   AJAX.get("users")
     .then(response => callback(response.data));
 }
+function AddUser(callback, args) {
+  AJAX.post("users", args.user)
+    .then(response => callback(response.data));
+}
 export {
   GetArticle,
   GetArticles,
@@ -33,4 +37,5 @@ export {
   Login,
   IsLogined,
   GetUsers,
+  AddUser,
 };
