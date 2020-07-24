@@ -16,11 +16,11 @@ function EditArticle(callback, args) {
     .then(response => callback(response.data));
 }
 function Login(callback, args) {
-  AJAX.put("users/login", args.user)
+  AJAX.put("login", args.user)
     .then(response => callback(response.data));
 }
 function IsLogined(callback) {
-  AJAX.get("users/login")
+  AJAX.get("login")
     .then(response => callback(response.data));
 }
 function GetUsers(callback) {
