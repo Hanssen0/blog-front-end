@@ -34,6 +34,10 @@ function DeleteUserById(callback, args) {
   AJAX.delete("users/" + args.user_id)
     .then(response => callback(response.data));
 }
+function UpdateUser(callback, args) {
+  AJAX.put("users/" + args.user_id, args.user)
+    .then(response => callback(response.data));
+}
 export {
   GetArticle,
   GetArticles,
@@ -43,4 +47,5 @@ export {
   GetUsers,
   AddUser,
   DeleteUserById,
+  UpdateUser,
 };
