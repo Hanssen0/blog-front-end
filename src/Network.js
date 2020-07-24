@@ -22,10 +22,15 @@ function IsLogined(callback) {
   AJAX.get("users/login")
     .then(response => callback(response.data));
 }
+function GetUsers(callback) {
+  AJAX.get("users")
+    .then(response => callback(response.data));
+}
 export {
   GetArticle,
   GetArticles,
   EditArticle,
   Login,
   IsLogined,
+  GetUsers,
 };

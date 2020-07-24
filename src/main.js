@@ -11,6 +11,7 @@ import Main from "@/pages/Main.vue";
 import Article from "@/pages/Main/Article.vue";
 import ArticlesList from "@/pages/Main/ArticlesList.vue";
 import ArticleEdit from "@/pages/Main/ArticleEdit.vue";
+import UsersManage from "@/pages/Main/UsersManage.vue";
 
 const routes = [
   {
@@ -34,6 +35,9 @@ const routes = [
         path: "articles/:id/edit",
         component: ArticleEdit,
         props: true,
+      }, {
+        path: "users",
+        component: UsersManage,
       }
     ]
   }
