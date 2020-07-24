@@ -1,6 +1,7 @@
 import axios from "axios";
 const AJAX = axios.create({
-  baseURL: "http://localhost:8090"
+  baseURL: "http://localhost:8090",
+  withCredentials: true,
 });
 function GetArticle(callback, args) {
   AJAX.get("articles/" + args.id)
