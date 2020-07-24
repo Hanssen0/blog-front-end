@@ -6,11 +6,18 @@
           <thead>
             <tr>
               <th scope="col">用户名</th>
+              <th scope="col">操作</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(user, index) in users" :key="index">
-              <td v-text="user.username"></td>
+              <td class="align-middle" v-text="user.username"></td>
+              <td class="text-nowrap" width="1">
+                <button class="btn btn-danger material-icons"
+                        @click="DeleteUserById(user.id)">
+                  delete
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -42,7 +49,7 @@
   </div>
 </template>
 <script>
-import {GetUsers, AddUser} from "@/Network.js";
+import {GetUsers, AddUser, DeleteUserById} from "@/Network.js";
 export default {
   data: function() {
     return {
@@ -62,6 +69,10 @@ export default {
       });
     }, UpdateUser: function() {
       GetUsers(users => this.users = users);
+    }, DeleteUserById: function(id) {
+      DeleteUserById(this.UpdateUser, {
+        user_id: id,
+      });
     }
   }
 };
