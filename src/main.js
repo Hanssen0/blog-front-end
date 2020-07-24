@@ -12,6 +12,7 @@ import Article from "@/pages/Main/Article.vue";
 import ArticlesList from "@/pages/Main/ArticlesList.vue";
 import ArticleEdit from "@/pages/Main/ArticleEdit.vue";
 import UsersManage from "@/pages/Main/UsersManage.vue";
+import RolesManage from "@/pages/Main/RolesManage.vue";
 
 const routes = [
   {
@@ -38,6 +39,9 @@ const routes = [
       }, {
         path: "users",
         component: UsersManage,
+      }, {
+        path: "roles",
+        component: RolesManage,
       }
     ]
   }

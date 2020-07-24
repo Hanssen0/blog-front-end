@@ -39,6 +39,18 @@ function UpdateUser(callback, args) {
   AJAX.put("users/" + args.user_id, args.user)
     .then(response => callback(response.data));
 }
+function GetRoles(callback) {
+  AJAX.get("roles")
+    .then(response => callback(response.data));
+}
+function GetPermissionsOfRole(callback, args) {
+  AJAX.get("roles/" + args.role_id)
+    .then(response => callback(response.data));
+}
+function DeletePermissionOfRole(callback, args) {
+  AJAX.delete("roles/" + args.role_id + "/" +  args.permission_id)
+    .then(response => callback(response.data));
+}
 export {
   GetArticle,
   GetArticles,
@@ -49,4 +61,7 @@ export {
   AddUser,
   DeleteUserById,
   UpdateUser,
+  GetRoles,
+  GetPermissionsOfRole,
+  DeletePermissionOfRole,
 };
