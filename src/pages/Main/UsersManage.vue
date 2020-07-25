@@ -95,19 +95,19 @@ export default {
         }
       });
     }, UpdateUsersList: function() {
-      GetUsers(users => this.users = users);
+      GetUsers(users => this.users = users.data);
     }, DeleteUserById: function(id) {
       DeleteUserById(this.UpdateUsersList, {
         user_id: id,
       });
     }, UpdateUser: function(user) {
-        UpdateUser(this.UpdateUsersList, {
-          user_id: user.id,
-          user: {
-            username: user.username,
-            password: user.password,
-          },
-        });
+      UpdateUser(this.UpdateUsersList, {
+        user_id: user.id,
+        user: {
+          username: user.username,
+          password: user.password,
+        },
+      });
       this.editing_user = null;
     }
   }
