@@ -37,11 +37,11 @@ export default {
       password: "",
     };
   }, mounted: function() {
-    IsLogined(response => {if (response) ReplaceToIndexPage();});
+    IsLogined(response => {if (response.data) ReplaceToIndexPage();});
   }, methods: {
     Login: function() {
       Login(
-        response => {if (response) ReplaceToIndexPage();},
+        response => {if (response.error_type === null) ReplaceToIndexPage();},
         {
           user: {
             username: this.username,
