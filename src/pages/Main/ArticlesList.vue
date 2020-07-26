@@ -42,7 +42,7 @@ export default {
   }, mounted: function() {
     GetArticles(data => {
       this.articles = [];
-      data.forEach(article => {
+      data.data.forEach(article => {
         article.subtitles = BreakByLine(article.subtitle);
         article.contents = BreakByLine(article.content);
         article.publish_date = GetDateTimeFromTimestamp(article.publish_time);

@@ -54,11 +54,12 @@ export default {
     };
   }, mounted: function() {
     GetArticle(data => {
-      this.title = data.title;
-      this.subtitles = BreakByLine(data.subtitle);
-      this.contents = BreakByLine(data.content);
-      this.author = data.author;
-      this.publish_timestamp = data.publish_time;
+      let article = data.data;
+      this.title = article.title;
+      this.subtitles = BreakByLine(article.subtitle);
+      this.contents = BreakByLine(article.content);
+      this.author = article.author;
+      this.publish_timestamp = article.publish_time;
     }, {id: this.id});
   }, computed: {
     publish_date: function() {

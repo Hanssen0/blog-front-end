@@ -36,7 +36,8 @@ export default {
     };
   }, mounted: function() {
     GetArticle(
-      article => {
+      data => {
+        let article = data.data;
         this.title = article.title;
         this.content = article.content;
       }, {id: this.id}
